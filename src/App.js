@@ -4,64 +4,54 @@ import Index from './Index/Index'
 
 class App extends Component {
   state = {
-    index: [
-      { a: "a" },
-      { b: "b" },
-      { c: "c" }
-    ]
+      a: "a",
+      b: "b",
+      c: "c"
   }
   indexChangeHandlerA = (event) => {
     this.setState({
-      index: [
-        { a: event.target.value }
-      ]
+        a: event.target.value
     })
   }
   indexChangeHandlerB = (event) => {
     this.setState({
-      index: [
-        { b: event.target.value }
-      ]
+        b: event.target.value
     })
   }
 
   indexChangeHandlerC = (event) => {
     this.setState({
-      index: [
-        { c: event.target.value }
-      ]
+        c: event.target.value 
     })
   }
 
+  rootFinder = () => {
+    
+
+}
   render() {
+
+
     return (
       <div className="App">
         <h1>Let's find the roots</h1>
         <h2>ax^2 + bx + c</h2>
-        <p>
+        
           <Index
             changed={this.indexChangeHandlerA}
           > a: </Index>
-        </p>
-        <p>
+        
+        
           <Index
             changed={this.indexChangeHandlerB}
           > b: </Index>
-        </p>
-        <p>
+        
+        
           <Index
             changed={this.indexChangeHandlerC}
           > c: </Index>
-        </p>
-        <span onChange={this.indexChangeHandlerA}
-
-        > {this.state.index[0].a}x^2 + </span>
-        <span onChange={this.indexChangeHandlerB}
-
-        > {this.state.index[1].b}x + </span>
-        <span onChange={this.indexChangeHandlerC}
-
-        > {this.state.index[2].c} </span>
+        
+        <p> {this.state.a}x^2 + {this.state.b}x + {this.state.c} </p>
         <p>
           <button>find the roots</button>
         </p>
