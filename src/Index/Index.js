@@ -4,7 +4,10 @@ const index = (props) => {
     return (
         <div>
             <span> {props.children}</span>
-            <input type="text" onChange = {props.changed}/>
+            <input 
+            type="text" 
+            onChange = {props.changed}
+            value = {props.value}/>
         </div>
 
     )
