@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Index from './Index/Index'
+import Index from './Index/Index';
+import FindButton from './Button/findButton';
+import * as math from 'mathjs'
 
 class App extends Component {
   state = {
@@ -14,6 +16,7 @@ class App extends Component {
     x2: '',
     showResult: false
   }
+
   indexChangeHandlerA = (event) => {
     this.setState({
       inputa: event.target.value,
@@ -68,28 +71,27 @@ class App extends Component {
 
   render() {
     let results = null;
-    if(this.state.showResult){
+    if (this.state.showResult) {
       if ((this.findSquare(this.state.a, this.state.b, this.state.c)) > 0) {
         results = (
           <div>
-            <p>x1: {this.state.x1} </p>
-            <p>x2: {this.state.x2}</p>
+            <p className='result' >x1: {this.state.x1} </p>
+            <p className='result' >x2: {this.state.x2}</p>
           </div>
         )
       } else {
         results = (
           <div>
-            <p>roots undefined </p>
+            <p className='result' >roots undefined </p>
           </div>
         )
       }
     }
-    
 
     return (
-      <div className="App">
-        <h1>Let's find the roots</h1>
-        <h2>{this.state.a}x^2 + {this.state.b}x + {this.state.c}</h2>
+      <div class="container">
+        <h2 className='header'>Let's find the roots</h2>
+        <h3>{this.state.a}x^2 + {this.state.b}x + {this.state.c}</h3>
 
         <Index
           changed={this.indexChangeHandlerA}
@@ -108,11 +110,9 @@ class App extends Component {
           value={this.state.inputc}
         > c: </Index>
 
+        <FindButton findRoots={this.rootFinder} />
         <p>
-          <button onClick={this.rootFinder}>find the roots</button>
-        </p>
-        <p>
-          <button onClick={this.clear}>clear</button>
+          <button type="button" class="btn btn-danger" onClick={this.clear}>clear</button>
         </p>
         {results}
       </div>
