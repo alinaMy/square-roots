@@ -108,9 +108,18 @@ class App extends Component {
       let validSquare = this.findSquare(this.state.a, this.state.b, this.state.c);
       if (validSquare > 0 && validSquare % 1 === 0) {
         results = (
-          <div>
-            <p className='result' >x1: {this.state.x1} </p>
-            <p className='result' >x2: {this.state.x2}</p>
+          <div >
+            <div >
+              <p className="d-inline p-2 bg-success text-white">
+                x1: {this.state.x1}
+              </p>
+            </div>
+           <br></br>
+            <div>
+              <p className="d-inline p-2 bg-success text-white">
+                x2: {this.state.x2}
+              </p>
+            </div>
           </div>
         )
       } else {

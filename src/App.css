@@ -6,11 +6,9 @@
   font-style: italic
 }
 
-.fraction {
-  display: inline-block;
-  vertical-align: middle; 
-  text-align: center;
+.result {
+  display: block;
+  font-weight: bold;
+  
+ 
 }
-.fraction > span {display: block;}
-.fraction span.fraction--denominator {border-top: thin solid black;}
-.fraction span.fraction--bar {display: none;}
