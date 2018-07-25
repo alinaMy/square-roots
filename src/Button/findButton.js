@@ -5,7 +5,7 @@ const findButton = (props) => {
     return (
         <div>
             <p>
-                <button type="button" class="btn btn-primary" onClick={props.findRoots}>find the roots</button>
+                <button type="button" className="btn btn-primary" onClick={props.findRoots}>find the roots</button>
             </p>
         </div>
 

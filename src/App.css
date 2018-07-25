@@ -5,3 +5,12 @@
   text-shadow: 2px 2px #ff0000;
   font-style: italic
 }
+
+.fraction {
+  display: inline-block;
+  vertical-align: middle; 
+  text-align: center;
+}
+.fraction > span {display: block;}
+.fraction span.fraction--denominator {border-top: thin solid black;}
+.fraction span.fraction--bar {display: none;}
